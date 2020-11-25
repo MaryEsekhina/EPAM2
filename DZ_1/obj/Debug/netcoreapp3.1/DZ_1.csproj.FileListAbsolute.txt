@@ -1,0 +1,13 @@
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.csprojAssemblyReference.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.AssemblyInfoInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.AssemblyInfo.cs
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.csproj.CoreCompileInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.exe
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.deps.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.runtimeconfig.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.runtimeconfig.dev.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\bin\Debug\netcoreapp3.1\DZ_1.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ_1\obj\Debug\netcoreapp3.1\DZ_1.genruntimeconfig.cache
