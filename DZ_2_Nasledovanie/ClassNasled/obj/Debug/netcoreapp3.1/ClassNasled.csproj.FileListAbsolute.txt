@@ -1,0 +1,13 @@
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.exe
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.deps.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.runtimeconfig.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.runtimeconfig.dev.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\bin\Debug\netcoreapp3.1\ClassNasled.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.csprojAssemblyReference.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.AssemblyInfoInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.AssemblyInfo.cs
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.csproj.CoreCompileInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ_2_Nasledovanie\ClassNasled\obj\Debug\netcoreapp3.1\ClassNasled.genruntimeconfig.cache
