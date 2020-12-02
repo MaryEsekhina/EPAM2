@@ -1,0 +1,13 @@
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.exe
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.deps.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.runtimeconfig.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.runtimeconfig.dev.json
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\bin\Debug\netcoreapp3.1\DZ4_Collection.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.csprojAssemblyReference.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.AssemblyInfoInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.AssemblyInfo.cs
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.csproj.CoreCompileInputs.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.pdb
+J:\учеба\ЕРАМ\git\EPAM2\DZ4_Collection\obj\Debug\netcoreapp3.1\DZ4_Collection.genruntimeconfig.cache
