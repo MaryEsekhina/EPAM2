@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "DZ4_Collection/1.0.0": {
+        "runtime": {
+          "DZ4_Collection.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DZ4_Collection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
