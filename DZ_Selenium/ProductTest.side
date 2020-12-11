@@ -1,0 +1,594 @@
+{
+  "id": "2ebd5c0c-8afb-4fcc-bba2-c942f422f7c2",
+  "version": "2.0",
+  "name": "ProductTest",
+  "url": "http://localhost:5000",
+  "tests": [{
+    "id": "0649b548-9724-442c-98b6-0ade6bd42e14",
+    "name": "1 Login",
+    "commands": [{
+      "id": "9c5a684d-5ed5-4620-91c1-87987fa9aff3",
+      "comment": "",
+      "command": "open",
+      "target": "/Account/Login?ReturnUrl=%2F",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7a57eb8-541a-435a-9ef3-99021008139f",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c284e6c-eaeb-45d0-a636-d37cf0e0b1c9",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "9a6d4ae5-1224-491f-9291-59f05c43e443",
+      "comment": "",
+      "command": "click",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e27d0d15-1e4f-4bf2-9fba-863e5318e779",
+      "comment": "",
+      "command": "type",
+      "target": "id=Password",
+      "targets": [
+        ["id=Password", "id"],
+        ["name=Password", "name"],
+        ["css=#Password", "css:finder"],
+        ["xpath=//input[@id='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "993f2f81-4682-4e94-9103-48a322ed7975",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ac7716a-5ac2-482c-a0b6-5e95ed1da281",
+      "comment": "Проверка логина",
+      "command": "assertText",
+      "target": "//h2",
+      "targets": [],
+      "value": "Home page"
+    }, {
+      "id": "3f866427-ecb5-4bb7-a366-22564f7928d7",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6845b1a6-9f97-4e3c-a189-4e7d2267c989",
+    "name": "2 Add",
+    "commands": [{
+      "id": "e3e95f4e-6d7a-4c01-a494-f47b71689133",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b33fada-013f-4a26-805b-e05b34f774fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container-fluid:nth-child(3) > div:nth-child(1) > a",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1dbf2a68-d35d-4277-9042-9802a4fc300f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Create new",
+      "targets": [
+        ["linkText=Create new", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Create new')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Create')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create new')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "04585d2b-5d13-44ab-a823-8c702e77247a",
+      "comment": "",
+      "command": "click",
+      "target": "id=ProductName",
+      "targets": [
+        ["id=ProductName", "id"],
+        ["name=ProductName", "name"],
+        ["css=#ProductName", "css:finder"],
+        ["xpath=//input[@id='ProductName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "780b62bf-b6bb-4498-9412-99581c39d96d",
+      "comment": "",
+      "command": "type",
+      "target": "id=ProductName",
+      "targets": [
+        ["id=ProductName", "id"],
+        ["name=ProductName", "name"],
+        ["css=#ProductName", "css:finder"],
+        ["xpath=//input[@id='ProductName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "chiken legs"
+    }, {
+      "id": "26c0ba77-8ff5-4928-98af-e182526bcf7b",
+      "comment": "",
+      "command": "click",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e600c420-e68e-42f3-9a27-d1d47f311d50",
+      "comment": "",
+      "command": "select",
+      "target": "id=CategoryId",
+      "targets": [],
+      "value": "label=Meat/Poultry"
+    }, {
+      "id": "547f3535-8d3d-4873-9424-deee2d3e910d",
+      "comment": "",
+      "command": "click",
+      "target": "id=CategoryId",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bedee50-6885-4465-ac40-2749cb325ec5",
+      "comment": "",
+      "command": "click",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7743ddbb-374d-4929-a6f7-1a92fef0e08c",
+      "comment": "",
+      "command": "select",
+      "target": "id=SupplierId",
+      "targets": [],
+      "value": "label=Grandma Kelly's Homestead"
+    }, {
+      "id": "7970bdb0-d62e-40cb-a072-54518e727eb7",
+      "comment": "",
+      "command": "click",
+      "target": "id=SupplierId",
+      "targets": [
+        ["id=SupplierId", "id"],
+        ["name=SupplierId", "name"],
+        ["css=#SupplierId", "css:finder"],
+        ["xpath=//select[@id='SupplierId']", "xpath:attributes"],
+        ["xpath=//div[3]/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac1c925f-7b38-4428-a0b9-0a6467e889e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fed8c3f-c59c-4732-a7a2-821edffce3a1",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitPrice",
+      "targets": [
+        ["id=UnitPrice", "id"],
+        ["name=UnitPrice", "name"],
+        ["css=#UnitPrice", "css:finder"],
+        ["xpath=//input[@id='UnitPrice']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "a76dcedd-a061-439b-a59e-149158800300",
+      "comment": "",
+      "command": "click",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b216658b-654c-47ad-b0b2-0861adeec64e",
+      "comment": "",
+      "command": "type",
+      "target": "id=QuantityPerUnit",
+      "targets": [
+        ["id=QuantityPerUnit", "id"],
+        ["name=QuantityPerUnit", "name"],
+        ["css=#QuantityPerUnit", "css:finder"],
+        ["xpath=//input[@id='QuantityPerUnit']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "266828fe-4f20-4d0c-b6bf-4f33ff0cc53a",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9b4cb23-e365-4230-8caf-5e82c5c740e4",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitsInStock",
+      "targets": [
+        ["id=UnitsInStock", "id"],
+        ["name=UnitsInStock", "name"],
+        ["css=#UnitsInStock", "css:finder"],
+        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
+        ["xpath=//div[6]/div/input", "xpath:position"]
+      ],
+      "value": "200"
+    }, {
+      "id": "6d3bedd6-f2e8-4520-b75e-d086105cfe1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b1299f7-cd6a-4dd9-a6bf-8c3a6b737194",
+      "comment": "",
+      "command": "type",
+      "target": "id=UnitsOnOrder",
+      "targets": [
+        ["id=UnitsOnOrder", "id"],
+        ["name=UnitsOnOrder", "name"],
+        ["css=#UnitsOnOrder", "css:finder"],
+        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
+        ["xpath=//div[7]/div/input", "xpath:position"]
+      ],
+      "value": "12"
+    }, {
+      "id": "943d0733-4099-4a4a-a191-1d8337bd9931",
+      "comment": "",
+      "command": "click",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b436c126-4bc8-4ac9-98a9-9434d6432289",
+      "comment": "",
+      "command": "type",
+      "target": "id=ReorderLevel",
+      "targets": [
+        ["id=ReorderLevel", "id"],
+        ["name=ReorderLevel", "name"],
+        ["css=#ReorderLevel", "css:finder"],
+        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
+        ["xpath=//div[8]/div/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "31394d26-ad52-4513-85a2-c80c4c96f7bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a34f1bf7-f26a-4217-932f-725214af7c32",
+      "comment": "Проверка добавления товара",
+      "command": "assertElementPresent",
+      "target": "//*[@class='table']//a[text()='chiken legs']",
+      "targets": [],
+      "value": "true"
+    }, {
+      "id": "36a6d937-c4cf-49e6-b962-688788c46a22",
+      "comment": "Проверка закрытия формы",
+      "command": "assertElementNotPresent",
+      "target": "//input[@type='submit']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d7904f0-8212-47c3-954f-e1a49203af73",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "97d346de-19d0-4432-b926-e0bdb488f03b",
+    "name": "3 Open&check",
+    "commands": [{
+      "id": "1247125c-bbf2-41cf-8aa8-b8f07bff31f0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9878284-e1cf-44ae-a0ca-72765dfab364",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container-fluid:nth-child(3) > div:nth-child(1) > a",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7d499b0-2446-4077-b952-b308f98ba994",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=chiken legs",
+      "targets": [
+        ["linkText=chiken legs", "linkText"],
+        ["css=tr:nth-child(79) > td:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'chiken legs')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Edit?ProductId=82')]", "xpath:href"],
+        ["xpath=//tr[79]/td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'chiken legs')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1c676d6-cce3-4f38-b06e-f248088bb5ee",
+      "comment": "Проверка ProductName",
+      "command": "assertValue",
+      "target": "//input[@name=\"ProductName\"]",
+      "targets": [],
+      "value": "chiken legs"
+    }, {
+      "id": "546a05fc-678d-4268-af56-f3dae74f7334",
+      "comment": "Проверка Category",
+      "command": "assertText",
+      "target": "//select[@id=\"CategoryId\"]//option[@selected=\"selected\"]",
+      "targets": [],
+      "value": "Meat/Poultry"
+    }, {
+      "id": "03f15528-a220-46cb-9539-92ff7a3489f3",
+      "comment": "Проверка Supplier",
+      "command": "assertText",
+      "target": "//label[@for=\"SupplierId\"]/..//option[@selected=\"selected\"]",
+      "targets": [],
+      "value": "Grandma Kelly's Homestead"
+    }, {
+      "id": "114a57d4-ac6c-4e0f-8496-e99b7726e7ea",
+      "comment": "Проверка UnitPrice",
+      "command": "assertValue",
+      "target": "//input[@id=\"UnitPrice\"]",
+      "targets": [],
+      "value": "100,0000"
+    }, {
+      "id": "0f08b728-a6ed-44f0-9bc9-2185d4c2803f",
+      "comment": "Проверка QuantityPerUnit",
+      "command": "assertValue",
+      "target": "//input[@id=\"QuantityPerUnit\"]",
+      "targets": [],
+      "value": "12"
+    }, {
+      "id": "8a5da20a-475e-4013-893a-a9bf19d4fe0f",
+      "comment": "UnitsInStock",
+      "command": "assertValue",
+      "target": "//input[@id=\"UnitsInStock\"]",
+      "targets": [],
+      "value": "200"
+    }, {
+      "id": "7996f26c-2b94-4267-888f-5fd7fbabec13",
+      "comment": "Проверка UnitsOnOrder",
+      "command": "assertValue",
+      "target": "//input[@id=\"UnitsOnOrder\"]",
+      "targets": [],
+      "value": "12"
+    }, {
+      "id": "152ec6da-4bdd-4889-bc25-4371dc2eea63",
+      "comment": "Проверка ReorderLevel",
+      "command": "assertValue",
+      "target": "//input[@id=\"ReorderLevel\"]",
+      "targets": [],
+      "value": "2"
+    }, {
+      "id": "cb5f7bf5-8397-4589-99aa-5810a21fe429",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "404778af-30d9-45a1-9990-d6f3c3de914b",
+    "name": "5 Logout",
+    "commands": [{
+      "id": "67d1242c-5f64-49ec-bab1-92c42fbc1ec0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c191db2d-a20f-48e3-b8aa-baf8736acf42",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [
+        ["linkText=Logout", "linkText"],
+        ["css=li:nth-child(4) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Logout')]", "xpath:link"],
+        ["xpath=//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Account/Logout')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Logout')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fc81c31-6b09-4da2-9c8b-60ecad2881c6",
+      "comment": "Проверка появления формы логина",
+      "command": "assertText",
+      "target": "//h2",
+      "targets": [],
+      "value": "Login"
+    }, {
+      "id": "c9be723e-922b-4f3b-ba79-c0d331e69e47",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "aa06744a-73ff-4666-8287-f0a61aa74bed",
+    "name": "4 Delete",
+    "commands": [{
+      "id": "4d8464fa-8739-4018-92f5-be80932f5fce",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f0e1502-10c0-48b6-8b8b-6d29da0230b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container-fluid:nth-child(3) > div:nth-child(1) > a",
+      "targets": [
+        ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/Product')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fede043b-e44d-4690-912d-c9a825f99ebb",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5aa6512a-18a9-4f9a-988b-db357324fcf9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[text()=\"chiken legs\"]/../following-sibling::*/a[text()=\"Remove\"]",
+      "targets": [
+        ["css=tr:nth-child(79) > td:nth-child(12) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Remove')])[78]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Product/Remove?ProductId=82')]", "xpath:href"],
+        ["xpath=//tr[79]/td[12]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c01a2af-05b1-47c6-9a75-cdd138f147df",
+      "comment": "Проверка корректности удаления",
+      "command": "assertElementNotPresent",
+      "target": "//table//a[text()=\"chiken legs\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49e1c3e5-80cf-4139-8186-7a3cfb994fdf",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a8e2d8dc-dd4d-48db-83da-9703aac7d5cf",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0649b548-9724-442c-98b6-0ade6bd42e14"]
+  }],
+  "urls": ["http://localhost:5000/"],
+  "plugins": []
+}
