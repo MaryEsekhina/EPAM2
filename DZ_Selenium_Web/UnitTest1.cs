@@ -2,6 +2,8 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Threading;
 
 namespace DZ_Selenium_Web
 {
@@ -10,12 +12,11 @@ namespace DZ_Selenium_Web
 
         private IWebDriver driver;
 
-        public static bool isElementPresent(By locator)
+        public bool isElementPresent(By locator)
         {
-            IWebDriver driver1 = new ChromeDriver();
             try
             {
-                driver1.FindElement(locator);
+                driver.FindElement(locator);
             }
             catch (NoSuchElementException)
             {
@@ -24,7 +25,7 @@ namespace DZ_Selenium_Web
             return true;
         }
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             
@@ -33,7 +34,7 @@ namespace DZ_Selenium_Web
             driver.Manage().Window.Maximize();
         }
 
-        [Test]
+        [Test, Order(1)]
         public void Test1Login()
         {
             
@@ -44,12 +45,9 @@ namespace DZ_Selenium_Web
             Assert.AreEqual("Home page", logintext);
         }
 
-        [Test]
+        [Test, Order(2)]
         public void Test2Add()
         {
-            driver.FindElement(By.Id("Name")).SendKeys("user");
-            driver.FindElement(By.Id("Password")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
             driver.FindElement(By.XPath("//div/div/a[text()=\"All Products\"]")).Click();
             driver.FindElement(By.XPath("//div/a[text()=\"Create new\"]")).Click();
             driver.FindElement(By.Id("ProductName")).SendKeys("chiken legs");
@@ -68,13 +66,9 @@ namespace DZ_Selenium_Web
             Assert.IsFalse(isElementPresent(By.XPath("//input[@type=\"submit\"]")));
         }
 
-        [Test]
+        [Test, Order(3)]
         public void Test3Check()
         {
-            driver.FindElement(By.Id("Name")).SendKeys("user");
-            driver.FindElement(By.Id("Password")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
-            driver.FindElement(By.XPath("//div/div/a[text()=\"All Products\"]")).Click();
             driver.FindElement(By.XPath("//a[text()=\"chiken legs\"]")).Click();
             string pname = driver.FindElement(By.XPath("//input[@name=\"ProductName\"]")).GetAttribute("value");
             string uprice = driver.FindElement(By.XPath("//input[@id=\"UnitPrice\"]")).GetAttribute("value");
@@ -96,34 +90,29 @@ namespace DZ_Selenium_Web
             Assert.AreEqual(uis, "200");
             Assert.AreEqual(uoo, "12");
             Assert.AreEqual(rlevel, "2");
+            driver.FindElement(By.XPath("//a[text()=\"Products\"]")).Click();
         }
 
-        [Test]
+        [Test, Order(4)]
         public void Test4Delete()
         {
-            driver.FindElement(By.Id("Name")).SendKeys("user");
-            driver.FindElement(By.Id("Password")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
-            driver.FindElement(By.XPath("//div/div/a[text()=\"All Products\"]")).Click();
             driver.FindElement(By.XPath("//a[text()=\"chiken legs\"]/../following-sibling::*/a[text()=\"Remove\"]")).Click();
             driver.SwitchTo().Alert().Accept();
+            Thread.Sleep(1000); //тк до проверки элемент не успевал исчезнуть после нажатия ОК на диалоговом окне
             Assert.IsFalse(isElementPresent(By.XPath("//table//a[text()=\"chiken legs\"]")));
         }
 
-        [Test]
+        [Test, Order(5)]
         public void Test5Logout()
         {
-            driver.FindElement(By.Id("Name")).SendKeys("user");
-            driver.FindElement(By.Id("Password")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
             driver.FindElement(By.XPath("//a[text()=\"Logout\"]")).Click();
             Assert.AreEqual(driver.FindElement(By.XPath("//h2")).Text, "Login");
 
 
         }
 
-    
-        [TearDown]
+
+        [OneTimeTearDown]
         public void QuitDriver()
         {
             driver.Close();
