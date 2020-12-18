@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "pXheeu2Ucp0vOhZ0CBIB4wpoCaZJVRHjZQhDnziyd9DYX0JCWWNto57JGigfjywbLIazuch6MKP7vS8MzwbkCQ==",
+  "dgSpecHash": "gkLzOJ9bosZ0qi73I1mcXu+cI+Nwcigy2d0PaKNs8cQ0uU3yaMzt+PE5rgqDpMXojjMwvmRQ+NqzupWZVXa4Iw==",
   "success": true,
   "projectFilePath": "J:\\учеба\\ЕРАМ\\git\\EPAM2\\DZ_Selenium_Web\\DZ_Selenium_Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Андрей\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\3.12.0\\dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core.linq\\1.0.0\\dotnetseleniumextras.pageobjects.core.linq.1.0.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
@@ -44,6 +46,7 @@
     "C:\\Users\\Андрей\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\Андрей\\.nuget\\packages\\system.reflection.dispatchproxy\\4.4.0\\system.reflection.dispatchproxy.4.4.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\Андрей\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",

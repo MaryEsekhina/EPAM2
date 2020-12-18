@@ -1,3 +1,4 @@
+using DZ_Selenium_Web.pageobj;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -11,6 +12,12 @@ namespace DZ_Selenium_Web
     {
 
         private IWebDriver driver;
+        private LoginPage logPage;
+        private HomePage homePage;
+        private ProductPage productPage;
+        private MainPage mainPage;
+        private WebDriverWait wait;
+
 
         public bool isElementPresent(By locator)
         {
@@ -37,10 +44,8 @@ namespace DZ_Selenium_Web
         [Test, Order(1)]
         public void Test1Login()
         {
-            
-            driver.FindElement(By.Id("Name")).SendKeys("user");
-            driver.FindElement(By.Id("Password")).SendKeys("user");
-            driver.FindElement(By.CssSelector(".btn")).Click();
+            logPage = new LoginPage(driver);
+            logPage.Login("user", "user");
             string logintext = driver.FindElement(By.XPath("//h2")).Text;
             Assert.AreEqual("Home page", logintext);
         }
@@ -48,40 +53,33 @@ namespace DZ_Selenium_Web
         [Test, Order(2)]
         public void Test2Add()
         {
-            driver.FindElement(By.XPath("//div/div/a[text()=\"All Products\"]")).Click();
-            driver.FindElement(By.XPath("//div/a[text()=\"Create new\"]")).Click();
-            driver.FindElement(By.Id("ProductName")).SendKeys("chiken legs");
-            IWebElement selectElemCat = driver.FindElement(By.Id("CategoryId"));
-            SelectElement selectCat = new SelectElement(selectElemCat);
-            selectCat.SelectByValue("6");
-            IWebElement selectElemSup = driver.FindElement(By.Id("SupplierId"));
-            SelectElement selectSup = new SelectElement(selectElemSup);
-            selectSup.SelectByValue("3");
-            driver.FindElement(By.Id("UnitPrice")).SendKeys("100");
-            driver.FindElement(By.Id("QuantityPerUnit")).SendKeys("12");
-            driver.FindElement(By.Id("UnitsInStock")).SendKeys("200");
-            driver.FindElement(By.Id("UnitsOnOrder")).SendKeys("12");
-            driver.FindElement(By.Id("ReorderLevel")).SendKeys("2");
-            driver.FindElement(By.CssSelector(".btn")).Click();
+            homePage = new HomePage(driver);
+            mainPage = homePage.ClickLink("All Products");
+            productPage = mainPage.CreateProduct();
+            productPage.InputValue("ProductName", "chiken legs");
+            productPage.InputSelect("CategoryId", "6");
+            productPage.InputSelect("SupplierId", "3");
+            productPage.InputValue("UnitPrice", "100");
+            productPage.InputValue("QuantityPerUnit", "12");
+            productPage.InputValue("UnitsInStock", "200");
+            productPage.InputValue("UnitsOnOrder", "12");
+            productPage.InputValue("ReorderLevel", "2");
+            productPage.submit();
             Assert.IsFalse(isElementPresent(By.XPath("//input[@type=\"submit\"]")));
         }
 
         [Test, Order(3)]
         public void Test3Check()
         {
-            driver.FindElement(By.XPath("//a[text()=\"chiken legs\"]")).Click();
-            string pname = driver.FindElement(By.XPath("//input[@name=\"ProductName\"]")).GetAttribute("value");
-            string uprice = driver.FindElement(By.XPath("//input[@id=\"UnitPrice\"]")).GetAttribute("value");
-            string qpu = driver.FindElement(By.XPath("//input[@id=\"QuantityPerUnit\"]")).GetAttribute("value");
-            string uis = driver.FindElement(By.XPath("//input[@id=\"UnitsInStock\"]")).GetAttribute("value");
-            string uoo = driver.FindElement(By.XPath("//input[@id=\"UnitsOnOrder\"]")).GetAttribute("value");
-            string rlevel = driver.FindElement(By.XPath("//input[@id=\"ReorderLevel\"]")).GetAttribute("value");
-            IWebElement selectElemCat = driver.FindElement(By.Id("CategoryId"));
-            SelectElement selectCat = new SelectElement(selectElemCat);
-            string category = selectCat.SelectedOption.Text;
-            IWebElement selectElemSup = driver.FindElement(By.Id("SupplierId"));
-            SelectElement selectSup = new SelectElement(selectElemSup);
-            string supplier = selectSup.SelectedOption.Text;
+            productPage = mainPage.OpenProduct("chiken legs");
+            string pname = productPage.ReadValue("ProductName");
+            string uprice = productPage.ReadValue("UnitPrice");
+            string qpu = productPage.ReadValue("QuantityPerUnit");
+            string uis = productPage.ReadValue("UnitsInStock");
+            string uoo = productPage.ReadValue("UnitsOnOrder");
+            string rlevel = productPage.ReadValue("ReorderLevel");
+            string category = productPage.ReadSelect("CategoryId");
+            string supplier = productPage.ReadSelect("SupplierId");
             Assert.AreEqual(category, "Meat/Poultry");
             Assert.AreEqual(supplier, "Grandma Kelly's Homestead");
             Assert.AreEqual(pname, "chiken legs");
@@ -90,25 +88,23 @@ namespace DZ_Selenium_Web
             Assert.AreEqual(uis, "200");
             Assert.AreEqual(uoo, "12");
             Assert.AreEqual(rlevel, "2");
-            driver.FindElement(By.XPath("//a[text()=\"Products\"]")).Click();
+            productPage.ClickProducts();
         }
 
         [Test, Order(4)]
         public void Test4Delete()
         {
-            driver.FindElement(By.XPath("//a[text()=\"chiken legs\"]/../following-sibling::*/a[text()=\"Remove\"]")).Click();
-            driver.SwitchTo().Alert().Accept();
-            Thread.Sleep(1000); //тк до проверки элемент не успевал исчезнуть после нажатия ОК на диалоговом окне
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            mainPage.DeleteProduct("chiken legs");
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(("//h2[text()=\"All Products\"]"))));//тк до проверки элемент не успевал исчезнуть после нажатия ОК на диалоговом окне
             Assert.IsFalse(isElementPresent(By.XPath("//table//a[text()=\"chiken legs\"]")));
         }
 
         [Test, Order(5)]
         public void Test5Logout()
         {
-            driver.FindElement(By.XPath("//a[text()=\"Logout\"]")).Click();
+            mainPage.Logout();
             Assert.AreEqual(driver.FindElement(By.XPath("//h2")).Text, "Login");
-
-
         }
 
 

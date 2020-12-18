@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "DZ_Selenium_Web/1.0.0": {
         "dependencies": {
+          "DotNetSeleniumExtras.PageObjects.Core": "3.12.0",
+          "DotNetSeleniumExtras.PageObjects.Core.Linq": "1.0.0",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "NUnit": "3.12.0",
@@ -18,6 +20,26 @@
         },
         "runtime": {
           "DZ_Selenium_Web.dll": {}
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects.Core/3.12.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "3.141.0",
+          "System.Reflection.DispatchProxy": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.PageObjects.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects.Core.Linq/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.PageObjects.Linq.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
@@ -645,6 +667,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.DispatchProxy/4.4.0": {},
       "System.Reflection.Emit/4.3.0": {
         "dependencies": {
           "System.IO": "4.3.0",
@@ -879,6 +902,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DotNetSeleniumExtras.PageObjects.Core/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FcwAc221M6DIzy1yiYfed4FfoS6tZsI/Kkb1qGl8ChP9UELMi00VVMrHE+VsOtu9q5BvkoqyD4uXlm/5KJX3/Q==",
+      "path": "dotnetseleniumextras.pageobjects.core/3.12.0",
+      "hashPath": "dotnetseleniumextras.pageobjects.core.3.12.0.nupkg.sha512"
+    },
+    "DotNetSeleniumExtras.PageObjects.Core.Linq/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k8bXAZ9jLpApyG0uDYnXcMhKy1S1XQhT1bNgX6ZNwU5/iF8rWxlI7Hyo7eX0hQ//KVe0fXlnPmZCdUj9mLC8Vg==",
+      "path": "dotnetseleniumextras.pageobjects.core.linq/1.0.0",
+      "hashPath": "dotnetseleniumextras.pageobjects.core.linq.1.0.0.nupkg.sha512"
     },
     "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
       "type": "package",
@@ -1159,6 +1196,13 @@
       "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.DispatchProxy/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xK6JE0mpsBD+T0qu3V6dmVRa06PxAvIIM/zSjouqP7Sk6X+FQj+9XFRz9GmZk9aJGMU1LX6AgTZIlsYZ64QKsw==",
+      "path": "system.reflection.dispatchproxy/4.4.0",
+      "hashPath": "system.reflection.dispatchproxy.4.4.0.nupkg.sha512"
     },
     "System.Reflection.Emit/4.3.0": {
       "type": "package",
