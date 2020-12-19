@@ -57,6 +57,12 @@ namespace DZ_Selenium_Web
             mainPage = homePage.ClickLink("All Products");
             productPage = mainPage.CreateProduct();
             productPage.InputValue("ProductName", "chiken legs");
+            IWebElement selectElem = driver.FindElement(By.Id("CategoryId"));
+            SelectElement select = new SelectElement(selectElem);
+            select.SelectByValue("6");
+            selectElem = driver.FindElement(By.Id("SupplierId"));
+            select = new SelectElement(selectElem);
+            select.SelectByValue("3");
             productPage.InputSelect("CategoryId", "6");
             productPage.InputSelect("SupplierId", "3");
             productPage.InputValue("UnitPrice", "100");
