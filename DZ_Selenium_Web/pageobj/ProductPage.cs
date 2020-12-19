@@ -9,8 +9,9 @@ namespace DZ_Selenium_Web.pageobj
     class ProductPage
     {
         private IWebDriver driver;
-        private IWebElement submitBtn => driver.FindElement(By.CssSelector(".btn"));
+        public IWebElement submitBtn => driver.FindElement(By.CssSelector(".btn"));
         private IWebElement productsLink => driver.FindElement(By.XPath("//a[text()=\"Products\"]"));
+        private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
 
         public ProductPage(IWebDriver driver)
         {
@@ -50,6 +51,11 @@ namespace DZ_Selenium_Web.pageobj
             IWebElement selectElem = driver.FindElement(By.Id(id));
             SelectElement select = new SelectElement(selectElem);
             return select.SelectedOption.Text;
+        }
+        public LoginPage Logout()
+        {
+            logout.Click();
+            return new LoginPage(driver);
         }
     }
 }

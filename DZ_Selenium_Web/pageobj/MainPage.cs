@@ -31,9 +31,10 @@ namespace DZ_Selenium_Web.pageobj
             return new ProductPage(driver);
         }
 
-        public void Logout()
+        public LoginPage Logout()
         {
             logout.Click();
+            return new LoginPage(driver);
         }
         public void DeleteProduct(string name)
         {

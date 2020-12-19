@@ -8,6 +8,7 @@ namespace DZ_Selenium_Web.pageobj
     class HomePage
     {
         private IWebDriver driver;
+        private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
         public HomePage(IWebDriver driver)
         {
             this.driver = driver;
@@ -20,6 +21,14 @@ namespace DZ_Selenium_Web.pageobj
             return new MainPage(driver);
         }
 
-
+        public string TitleText()
+        {
+            return driver.FindElement(By.XPath("//h2")).Text;
+        }
+        public LoginPage Logout()
+        {
+            logout.Click();
+            return new LoginPage(driver);
+        }
     }
 }

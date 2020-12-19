@@ -45,8 +45,8 @@ namespace DZ_Selenium_Web
         public void Test1Login()
         {
             logPage = new LoginPage(driver);
-            logPage.Login("user", "user");
-            string logintext = driver.FindElement(By.XPath("//h2")).Text;
+            homePage = logPage.Login("user", "user");
+            string logintext = homePage.TitleText();
             Assert.AreEqual("Home page", logintext);
         }
 
@@ -72,22 +72,22 @@ namespace DZ_Selenium_Web
         public void Test3Check()
         {
             productPage = mainPage.OpenProduct("chiken legs");
-            string pname = productPage.ReadValue("ProductName");
-            string uprice = productPage.ReadValue("UnitPrice");
-            string qpu = productPage.ReadValue("QuantityPerUnit");
-            string uis = productPage.ReadValue("UnitsInStock");
-            string uoo = productPage.ReadValue("UnitsOnOrder");
-            string rlevel = productPage.ReadValue("ReorderLevel");
-            string category = productPage.ReadSelect("CategoryId");
-            string supplier = productPage.ReadSelect("SupplierId");
-            Assert.AreEqual(category, "Meat/Poultry");
-            Assert.AreEqual(supplier, "Grandma Kelly's Homestead");
-            Assert.AreEqual(pname, "chiken legs");
-            Assert.AreEqual(uprice, "100,0000");
-            Assert.AreEqual(qpu, "12");
-            Assert.AreEqual(uis, "200");
-            Assert.AreEqual(uoo, "12");
-            Assert.AreEqual(rlevel, "2");
+            string productName = productPage.ReadValue("ProductName");
+            string unitPrice = productPage.ReadValue("UnitPrice");
+            string quantityPerUnit = productPage.ReadValue("QuantityPerUnit");
+            string unitsInStock = productPage.ReadValue("UnitsInStock");
+            string unitsOnOrder = productPage.ReadValue("UnitsOnOrder");
+            string reorderLevel = productPage.ReadValue("ReorderLevel");
+            string categoryId = productPage.ReadSelect("CategoryId");
+            string supplierId = productPage.ReadSelect("SupplierId");
+            Assert.AreEqual(categoryId, "Meat/Poultry");
+            Assert.AreEqual(supplierId, "Grandma Kelly's Homestead");
+            Assert.AreEqual(productName, "chiken legs");
+            Assert.AreEqual(unitPrice, "100,0000");
+            Assert.AreEqual(quantityPerUnit, "12");
+            Assert.AreEqual(unitsInStock, "200");
+            Assert.AreEqual(unitsOnOrder, "12");
+            Assert.AreEqual(reorderLevel, "2");
             productPage.ClickProducts();
         }
 
@@ -103,8 +103,9 @@ namespace DZ_Selenium_Web
         [Test, Order(5)]
         public void Test5Logout()
         {
-            mainPage.Logout();
-            Assert.AreEqual(driver.FindElement(By.XPath("//h2")).Text, "Login");
+            logPage = mainPage.Logout();
+            string logintext = logPage.TitleText();
+            Assert.AreEqual(logintext, "Login");
         }
 
 
