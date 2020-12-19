@@ -196,3 +196,5 @@ J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.c
 J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.dll
 J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.pdb
 J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.genruntimeconfig.cache
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.Linq.dll
