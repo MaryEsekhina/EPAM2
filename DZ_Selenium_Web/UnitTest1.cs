@@ -16,21 +16,11 @@ namespace DZ_Selenium_Web
         private LoginPage logPage;
         private HomePage homePage;
         private MainPage mainPage;
+        private ProductPage productPage;
         private Product chikenLegs = new Product("chiken legs", "Meat/Poultry", "Grandma Kelly's Homestead", 100, "12", "200", "12", "2");
         private ProductService productService;
 
-        public bool isElementPresent(By locator)
-        {
-            try
-            {
-                driver.FindElement(locator);
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            return true;
-        }
+
 
         [OneTimeSetUp]
         public void Setup()
@@ -54,30 +44,32 @@ namespace DZ_Selenium_Web
         public void Test2Add()
         {
             productService = new ProductService();
+            productPage = new ProductPage(driver);
             productService.InputProduct(chikenLegs, driver);
-            Assert.IsFalse(isElementPresent(By.XPath("//input[@type=\"submit\"]")));
+            Assert.IsFalse(productPage.IsSubmitPresent(driver));
         }
 
         [Test, Order(3)]
         public void Test3Check()
         {
             Product productCheck = productService.ReadProduct(chikenLegs, driver);
-            Assert.AreEqual(productCheck.categoryId, chikenLegs.categoryId);
-            Assert.AreEqual(productCheck.supplierId, chikenLegs.supplierId);
-            Assert.AreEqual(productCheck.productName, chikenLegs.productName);
-            Assert.AreEqual(productCheck.unitPrice, chikenLegs.unitPrice);
-            Assert.AreEqual(productCheck.quantityPerUnit, chikenLegs.quantityPerUnit);
-            Assert.AreEqual(productCheck.unitsInStock, chikenLegs.unitsInStock);
-            Assert.AreEqual(productCheck.unitsOnOrder, chikenLegs.unitsOnOrder);
-            Assert.AreEqual(productCheck.reorderLevel, chikenLegs.reorderLevel);
+            Assert.AreEqual( chikenLegs.categoryId, productCheck.categoryId);
+            Assert.AreEqual(chikenLegs.supplierId, productCheck.supplierId);
+            Assert.AreEqual(chikenLegs.productName, productCheck.productName);
+            Assert.AreEqual(chikenLegs.unitPrice, productCheck.unitPrice);
+            Assert.AreEqual(chikenLegs.quantityPerUnit, productCheck.quantityPerUnit);
+            Assert.AreEqual(chikenLegs.unitsInStock, productCheck.unitsInStock);
+            Assert.AreEqual(chikenLegs.unitsOnOrder, productCheck.unitsOnOrder);
+            Assert.AreEqual(chikenLegs.reorderLevel, productCheck.reorderLevel);
 
         }
 
         [Test, Order(4)]
         public void Test4Delete()
         {
+            mainPage = new MainPage(driver);
             productService.DeleteProduct(chikenLegs, driver);
-            Assert.IsFalse(isElementPresent(By.XPath("//table//a[text()=\"chiken legs\"]")));
+            Assert.IsFalse(mainPage.IsProductPresent(chikenLegs, driver));
         }
 
         [Test, Order(5)]

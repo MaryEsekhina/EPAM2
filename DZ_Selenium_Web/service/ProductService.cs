@@ -14,6 +14,8 @@ namespace DZ_Selenium_Web.service
         ProductPage productPage;
         MainPage mainPage;
 
+
+
         public void InputProduct(Product product, IWebDriver driver)
         {
             HomePage homePage = new HomePage(driver);
@@ -34,19 +36,22 @@ namespace DZ_Selenium_Web.service
             productPage.submit();
          }
 
+
         public Product ReadProduct(Product product, IWebDriver driver)
         {
             mainPage = new MainPage(driver);
             productPage = mainPage.OpenProduct(product);
-            Product product2 = new Product();
-            product2.productName = productPage.ReadValue("ProductName");
-            product2.unitPrice = float.Parse(productPage.ReadValue("UnitPrice"));
-            product2.quantityPerUnit = productPage.ReadValue("QuantityPerUnit");
-            product2.unitsInStock = productPage.ReadValue("UnitsInStock");
-            product2.unitsOnOrder = productPage.ReadValue("UnitsOnOrder");
-            product2.reorderLevel = productPage.ReadValue("ReorderLevel");
-            product2.categoryId = productPage.ReadSelect("CategoryId");
-            product2.supplierId = productPage.ReadSelect("SupplierId");
+            Product product2 = new Product
+            {
+                productName = productPage.ReadValue("ProductName"),
+                unitPrice = float.Parse(productPage.ReadValue("UnitPrice")),
+                quantityPerUnit = productPage.ReadValue("QuantityPerUnit"),
+                unitsInStock = productPage.ReadValue("UnitsInStock"),
+                unitsOnOrder = productPage.ReadValue("UnitsOnOrder"),
+                reorderLevel = productPage.ReadValue("ReorderLevel"),
+                categoryId = productPage.ReadSelect("CategoryId"),
+                supplierId = productPage.ReadSelect("SupplierId")
+            };
             return product2;
         }
 

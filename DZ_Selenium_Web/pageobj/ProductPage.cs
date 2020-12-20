@@ -28,7 +28,7 @@ namespace DZ_Selenium_Web.pageobj
         public void submit()
         {
             new Actions(driver).MoveToElement(submitBtn).Click(submitBtn).Build().Perform();
-  //          submitBtn.Click();
+
         }
 
         public MainPage ClickProducts()
@@ -53,6 +53,24 @@ namespace DZ_Selenium_Web.pageobj
         {
             logout.Click();
             return new LoginPage(driver);
+        }
+
+        public bool isElementPresent(By locator)
+        {
+            try
+            {
+                driver.FindElement(locator);
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool IsSubmitPresent(IWebDriver driver)
+        {
+            return isElementPresent(By.XPath("//input[@type=\"submit\"]"));
         }
     }
 }
