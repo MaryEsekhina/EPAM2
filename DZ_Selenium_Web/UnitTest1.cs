@@ -19,19 +19,6 @@ namespace DZ_Selenium_Web
         private WebDriverWait wait;
 
 
-        public bool isElementPresent(By locator)
-        {
-            try
-            {
-                driver.FindElement(locator);
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            return true;
-        }
-
         [OneTimeSetUp]
         public void Setup()
         {
@@ -59,10 +46,10 @@ namespace DZ_Selenium_Web
             productPage.InputValue("ProductName", "chiken legs");
             IWebElement selectElem = driver.FindElement(By.Id("CategoryId"));
             SelectElement select = new SelectElement(selectElem);
-            select.SelectByValue("6");
+            select.SelectByText("Meat/Poultry");
             selectElem = driver.FindElement(By.Id("SupplierId"));
             select = new SelectElement(selectElem);
-            select.SelectByValue("3");
+            select.SelectByText("Grandma Kelly's Homestead");
             productPage.InputSelect("CategoryId", "6");
             productPage.InputSelect("SupplierId", "3");
             productPage.InputValue("UnitPrice", "100");
@@ -71,7 +58,7 @@ namespace DZ_Selenium_Web
             productPage.InputValue("UnitsOnOrder", "12");
             productPage.InputValue("ReorderLevel", "2");
             productPage.submit();
-            Assert.IsFalse(isElementPresent(By.XPath("//input[@type=\"submit\"]")));
+            Assert.IsFalse(productPage.IsSubmitPresent(driver));
         }
 
         [Test, Order(3)]
@@ -100,10 +87,9 @@ namespace DZ_Selenium_Web
         [Test, Order(4)]
         public void Test4Delete()
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             mainPage.DeleteProduct("chiken legs");
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(("//h2[text()=\"All Products\"]"))));//тк до проверки элемент не успевал исчезнуть после нажатия ОК на диалоговом окне
-            Assert.IsFalse(isElementPresent(By.XPath("//table//a[text()=\"chiken legs\"]")));
+            mainPage.WaitAllProducts(driver);
+            Assert.IsFalse(mainPage.IsProductPresent("chiken legs", driver));
         }
 
         [Test, Order(5)]

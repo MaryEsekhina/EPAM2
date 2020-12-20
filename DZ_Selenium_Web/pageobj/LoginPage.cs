@@ -10,6 +10,7 @@ namespace DZ_Selenium_Web.pageobj
     {
         private IWebDriver driver;
         private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
+        private IWebElement title => driver.FindElement(By.XPath("//h2"));
         public LoginPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -31,7 +32,7 @@ namespace DZ_Selenium_Web.pageobj
 
         public string TitleText()
         {
-            return driver.FindElement(By.XPath("//h2")).Text;
+            return title.Text;
         }
         
     }
