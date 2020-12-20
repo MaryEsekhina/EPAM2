@@ -1,5 +1,6 @@
 ﻿using DZ_Selenium_Web.business_object;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -57,6 +58,12 @@ namespace DZ_Selenium_Web.pageobj
         public bool IsProductPresent(Product product ,IWebDriver driver)
         {
             return isElementPresent(By.XPath($"//table//a[text()=\"{product.productName}\"]"));
+        }
+
+        public void WaitAllProducts(IWebDriver driver)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(("//h2[text()=\"All Products\"]"))));
         }
     }
 }

@@ -58,10 +58,10 @@ namespace DZ_Selenium_Web.service
         public void DeleteProduct(Product product, IWebDriver driver)
         {
             productPage = new ProductPage(driver);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             mainPage = productPage.ClickProducts();
             mainPage.DeleteProduct(product);
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(("//h2[text()=\"All Products\"]"))));
+            mainPage.WaitAllProducts(driver);
+            
         }
     }
 }
