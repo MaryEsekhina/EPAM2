@@ -46,7 +46,7 @@ namespace DZ_Selenium_Web
             productService = new ProductService();
             productPage = new ProductPage(driver);
             productService.InputProduct(chikenLegs, driver);
-            Assert.IsFalse(productPage.IsSubmitPresent(driver));
+            Assert.IsFalse(productPage.IsSubmitPresent());
         }
 
         [Test, Order(3)]

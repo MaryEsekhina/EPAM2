@@ -21,18 +21,14 @@ namespace DZ_Selenium_Web.service
             HomePage homePage = new HomePage(driver);
             mainPage = homePage.ClickLink("All Products");
             productPage = mainPage.CreateProduct();
-            productPage.InputValue("ProductName", product.productName);
-            IWebElement selectElem = driver.FindElement(By.Id("CategoryId"));
-            SelectElement select = new SelectElement(selectElem);
-            select.SelectByText(product.categoryId);
-            selectElem = driver.FindElement(By.Id("SupplierId"));
-            select = new SelectElement(selectElem);
-            select.SelectByText(product.supplierId);
-            productPage.InputValue("UnitPrice", (product.unitPrice).ToString());
-            productPage.InputValue("QuantityPerUnit", product.quantityPerUnit);
-            productPage.InputValue("UnitsInStock", product.unitsInStock);
-            productPage.InputValue("UnitsOnOrder", product.unitsOnOrder);
-            productPage.InputValue("ReorderLevel", product.reorderLevel);
+            productPage.InputProductName(product.productName);
+            productPage.InputSupplierId(product);
+            productPage.InputCategoryId(product);
+            productPage.InputUnitPrice((product.unitPrice).ToString());
+            productPage.InputQuantityPerUnit(product.quantityPerUnit);
+            productPage.InputUnitsInStock(product.unitsInStock);
+            productPage.InputUnitsOnOrder(product.unitsOnOrder);
+            productPage.InputReorderLevel(product.reorderLevel);
             productPage.submit();
          }
 
@@ -43,14 +39,13 @@ namespace DZ_Selenium_Web.service
             productPage = mainPage.OpenProduct(product);
             Product product2 = new Product
             {
-                productName = productPage.ReadValue("ProductName"),
-                unitPrice = float.Parse(productPage.ReadValue("UnitPrice")),
-                quantityPerUnit = productPage.ReadValue("QuantityPerUnit"),
-                unitsInStock = productPage.ReadValue("UnitsInStock"),
-                unitsOnOrder = productPage.ReadValue("UnitsOnOrder"),
-                reorderLevel = productPage.ReadValue("ReorderLevel"),
-                categoryId = productPage.ReadSelect("CategoryId"),
-                supplierId = productPage.ReadSelect("SupplierId")
+                productName = productPage.ReadProductName(),
+                quantityPerUnit = productPage.ReadQuantityPerUnit(),
+                unitsInStock = productPage.ReadUnitsInStock(),
+                unitsOnOrder = productPage.ReadUnitsOnOrder(),
+                reorderLevel = productPage.ReadReorderLevel(),
+                categoryId = productPage.ReadCategoryId(),
+                supplierId = productPage.ReadSupplierId()
             };
             return product2;
         }
