@@ -13,6 +13,7 @@ namespace DZ_Selenium_Web.pageobj
         private IWebElement create => driver.FindElement(By.XPath("//div/a[text()=\"Create new\"]"));
 
         private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
+
         public MainPage(IWebDriver driver)
         {
             this.driver = driver;

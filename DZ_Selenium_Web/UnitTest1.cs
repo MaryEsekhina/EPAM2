@@ -43,20 +43,14 @@ namespace DZ_Selenium_Web
             homePage = new HomePage(driver);
             mainPage = homePage.ClickLink("All Products");
             productPage = mainPage.CreateProduct();
-            productPage.InputValue("ProductName", "chiken legs");
-            IWebElement selectElem = driver.FindElement(By.Id("CategoryId"));
-            SelectElement select = new SelectElement(selectElem);
-            select.SelectByText("Meat/Poultry");
-            selectElem = driver.FindElement(By.Id("SupplierId"));
-            select = new SelectElement(selectElem);
-            select.SelectByText("Grandma Kelly's Homestead");
-            productPage.InputSelect("CategoryId", "6");
-            productPage.InputSelect("SupplierId", "3");
-            productPage.InputValue("UnitPrice", "100");
-            productPage.InputValue("QuantityPerUnit", "12");
-            productPage.InputValue("UnitsInStock", "200");
-            productPage.InputValue("UnitsOnOrder", "12");
-            productPage.InputValue("ReorderLevel", "2");
+            productPage.InputProductName("chiken legs");
+            productPage.InputCategoryId("Meat/Poultry");
+            productPage.InputSupplierId("Grandma Kelly's Homestead");
+            productPage.InputUnitPrice("100");
+            productPage.InputQuantityPerUnit("12");
+            productPage.InputUnitsInStock("200");
+            productPage.InputUnitsOnOrder("12");
+            productPage.InputReorderLevel("2");
             productPage.submit();
             Assert.IsFalse(productPage.IsSubmitPresent(driver));
         }
@@ -65,14 +59,14 @@ namespace DZ_Selenium_Web
         public void Test3Check()
         {
             productPage = mainPage.OpenProduct("chiken legs");
-            string productName = productPage.ReadValue("ProductName");
-            string unitPrice = productPage.ReadValue("UnitPrice");
-            string quantityPerUnit = productPage.ReadValue("QuantityPerUnit");
-            string unitsInStock = productPage.ReadValue("UnitsInStock");
-            string unitsOnOrder = productPage.ReadValue("UnitsOnOrder");
-            string reorderLevel = productPage.ReadValue("ReorderLevel");
-            string categoryId = productPage.ReadSelect("CategoryId");
-            string supplierId = productPage.ReadSelect("SupplierId");
+            string productName = productPage.ReadProductName();
+            string unitPrice = productPage.ReadUnitPrice();
+            string quantityPerUnit = productPage.ReadQuantityPerUnit();
+            string unitsInStock = productPage.ReadUnitsInStock();
+            string unitsOnOrder = productPage.ReadUnitsOnOrder();
+            string reorderLevel = productPage.ReadReorderLevel();
+            string categoryId = productPage.ReadCategoryId();
+            string supplierId = productPage.ReadSupplierId();
             Assert.AreEqual(categoryId, "Meat/Poultry");
             Assert.AreEqual(supplierId, "Grandma Kelly's Homestead");
             Assert.AreEqual(productName, "chiken legs");
