@@ -22,8 +22,8 @@ namespace DZ_Selenium_Web.service
             mainPage = homePage.ClickLink("All Products");
             productPage = mainPage.CreateProduct();
             productPage.InputProductName(product.productName);
-            productPage.InputSupplierId(product);
-            productPage.InputCategoryId(product);
+            productPage.InputSupplierId(product.supplierId);
+            productPage.InputCategoryId(product.categoryId);
             productPage.InputUnitPrice((product.unitPrice).ToString());
             productPage.InputQuantityPerUnit(product.quantityPerUnit);
             productPage.InputUnitsInStock(product.unitsInStock);

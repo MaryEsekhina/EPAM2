@@ -25,6 +25,10 @@ namespace DZ_Selenium_Web.pageobj
             create.Click();
             return new ProductPage(driver);
         }
+        public void ClickCreate()
+        {
+            create.Click();
+        }
 
         public ProductPage OpenProduct(Product product)
         {
@@ -42,6 +46,7 @@ namespace DZ_Selenium_Web.pageobj
             driver.FindElement(By.XPath($"//a[text()=\"{product.productName}\"]/../following-sibling::*/a[text()=\"Remove\"]")).Click();
             driver.SwitchTo().Alert().Accept();
         }
+
         public bool isElementPresent(By locator)
         {
             try
@@ -55,9 +60,9 @@ namespace DZ_Selenium_Web.pageobj
             return true;
         }
 
-        public bool IsProductPresent(Product product ,IWebDriver driver)
+        public bool IsProductPresent(string product)
         {
-            return isElementPresent(By.XPath($"//table//a[text()=\"{product.productName}\"]"));
+            return isElementPresent(By.XPath($"//table//a[text()=\"{product}\"]"));
         }
 
         public void WaitAllProducts(IWebDriver driver)

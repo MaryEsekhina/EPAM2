@@ -9,7 +9,6 @@ namespace DZ_Selenium_Web.pageobj
     class LoginPage
     {
         private IWebDriver driver;
-        private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
         private IWebElement title => driver.FindElement(By.XPath("//h2"));
         private IWebElement logName => driver.FindElement(By.Id("Name"));
         private IWebElement logPass => driver.FindElement(By.Id("Password"));
@@ -33,5 +32,18 @@ namespace DZ_Selenium_Web.pageobj
             return title.Text;
         }
         
+        public void InputLogin(string login)
+        {
+            logName.SendKeys(login);
+        }
+
+        public void InputPassword(string pass)
+        {
+            logPass.SendKeys(pass);
+        }
+        public void ClickSubmit()
+        {
+            logBtn.Click();
+        }
     }
 }

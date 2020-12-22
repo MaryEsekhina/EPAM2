@@ -69,7 +69,7 @@ namespace DZ_Selenium_Web
         {
             mainPage = new MainPage(driver);
             productService.DeleteProduct(chikenLegs, driver);
-            Assert.IsFalse(mainPage.IsProductPresent(chikenLegs, driver));
+            Assert.IsFalse(mainPage.IsProductPresent(chikenLegs.productName));
         }
 
         [Test, Order(5)]

@@ -60,15 +60,15 @@ namespace DZ_Selenium_Web.pageobj
 
 
 
-        public void InputCategoryId(Product product)
+        public void InputCategoryId(string product)
         {
             SelectElement select = new SelectElement(selectCategoryId);
-            select.SelectByText(product.categoryId);
+            select.SelectByText(product);
         }
-        public void InputSupplierId(Product product)
+        public void InputSupplierId(string product)
         {
             SelectElement select = new SelectElement(selectSupplierId);
-            select.SelectByText(product.supplierId);
+            select.SelectByText(product);
         }
 
         public string ReadProductName()
