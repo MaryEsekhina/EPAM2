@@ -198,3 +198,14 @@ J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.p
 J:\учеба\ЕРАМ\DZ_Selenium_Web\obj\Debug\netcoreapp3.1\DZ_Selenium_Web.genruntimeconfig.cache
 J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
 J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.Linq.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\BoDi.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\Cucumber.Messages.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\Gherkin.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\TechTalk.SpecFlow.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\Utf8Json.dll
+J:\учеба\ЕРАМ\git\EPAM2\DZ_Selenium_Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

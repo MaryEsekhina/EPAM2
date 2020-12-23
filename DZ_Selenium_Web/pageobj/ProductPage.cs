@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DZ_Selenium_Web.business_object;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace DZ_Selenium_Web.pageobj
@@ -12,6 +14,7 @@ namespace DZ_Selenium_Web.pageobj
         public IWebElement submitBtn => driver.FindElement(By.CssSelector(".btn"));
         private IWebElement productsLink => driver.FindElement(By.XPath("//a[text()=\"Products\"]"));
         private IWebElement logout => driver.FindElement(By.XPath("//a[text()=\"Logout\"]"));
+
         private IWebElement productName => driver.FindElement(By.XPath($"//input[@name=\"ProductName\"]"));
         private IWebElement unitPrice => driver.FindElement(By.XPath($"//input[@name=\"UnitPrice\"]"));
         private IWebElement quantityPerUnit => driver.FindElement(By.XPath($"//input[@name=\"QuantityPerUnit\"]"));
@@ -20,6 +23,9 @@ namespace DZ_Selenium_Web.pageobj
         private IWebElement reorderLevel => driver.FindElement(By.XPath($"//input[@name=\"ReorderLevel\"]"));
         private IWebElement selectCategoryId => driver.FindElement(By.Id("CategoryId"));
         private IWebElement selectSupplierId => driver.FindElement(By.Id("SupplierId"));
+
+
+
 
         public ProductPage(IWebDriver driver)
         {
@@ -52,15 +58,17 @@ namespace DZ_Selenium_Web.pageobj
             reorderLevel.SendKeys(key);
         }
 
-        public void InputCategoryId(string value)
+
+
+        public void InputCategoryId(string product)
         {
             SelectElement select = new SelectElement(selectCategoryId);
-            select.SelectByText(value);
+            select.SelectByText(product);
         }
-        public void InputSupplierId(string value)
+        public void InputSupplierId(string product)
         {
             SelectElement select = new SelectElement(selectSupplierId);
-            select.SelectByText(value);
+            select.SelectByText(product);
         }
 
         public string ReadProductName()
@@ -104,22 +112,26 @@ namespace DZ_Selenium_Web.pageobj
             SelectElement select = new SelectElement(selectSupplierId);
             return select.SelectedOption.Text;
         }
+
         public void submit()
         {
-            submitBtn.Click();
+            new Actions(driver).MoveToElement(submitBtn).Click(submitBtn).Build().Perform();
+
         }
 
-        public void ClickProducts()
+        public MainPage ClickProducts()
         {
             productsLink.Click();
+            return new MainPage(driver);
         }
 
-      
+
         public LoginPage Logout()
         {
             logout.Click();
             return new LoginPage(driver);
         }
+
         public bool isElementPresent(By locator)
         {
             try
@@ -133,7 +145,7 @@ namespace DZ_Selenium_Web.pageobj
             return true;
         }
 
-        public bool IsSubmitPresent(IWebDriver driver)
+        public bool IsSubmitPresent()
         {
             return isElementPresent(By.XPath("//input[@type=\"submit\"]"));
         }

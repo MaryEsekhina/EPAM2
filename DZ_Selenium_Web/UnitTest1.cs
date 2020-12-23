@@ -1,10 +1,11 @@
+using DZ_Selenium_Web.business_object;
 using DZ_Selenium_Web.pageobj;
+using DZ_Selenium_Web.service;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Threading;
 
 namespace DZ_Selenium_Web
 {
@@ -14,9 +15,11 @@ namespace DZ_Selenium_Web
         private IWebDriver driver;
         private LoginPage logPage;
         private HomePage homePage;
-        private ProductPage productPage;
         private MainPage mainPage;
-        private WebDriverWait wait;
+        private ProductPage productPage;
+        private Product chikenLegs = new Product("chiken legs", "Meat/Poultry", "Grandma Kelly's Homestead", 100, "12", "200", "12", "2");
+        private ProductService productService;
+
 
 
         [OneTimeSetUp]
@@ -40,55 +43,39 @@ namespace DZ_Selenium_Web
         [Test, Order(2)]
         public void Test2Add()
         {
-            homePage = new HomePage(driver);
-            mainPage = homePage.ClickLink("All Products");
-            productPage = mainPage.CreateProduct();
-            productPage.InputProductName("chiken legs");
-            productPage.InputCategoryId("Meat/Poultry");
-            productPage.InputSupplierId("Grandma Kelly's Homestead");
-            productPage.InputUnitPrice("100");
-            productPage.InputQuantityPerUnit("12");
-            productPage.InputUnitsInStock("200");
-            productPage.InputUnitsOnOrder("12");
-            productPage.InputReorderLevel("2");
-            productPage.submit();
-            Assert.IsFalse(productPage.IsSubmitPresent(driver));
+            productService = new ProductService();
+            productPage = new ProductPage(driver);
+            productService.InputProduct(chikenLegs, driver);
+            Assert.IsFalse(productPage.IsSubmitPresent());
         }
 
         [Test, Order(3)]
         public void Test3Check()
         {
-            productPage = mainPage.OpenProduct("chiken legs");
-            string productName = productPage.ReadProductName();
-            string unitPrice = productPage.ReadUnitPrice();
-            string quantityPerUnit = productPage.ReadQuantityPerUnit();
-            string unitsInStock = productPage.ReadUnitsInStock();
-            string unitsOnOrder = productPage.ReadUnitsOnOrder();
-            string reorderLevel = productPage.ReadReorderLevel();
-            string categoryId = productPage.ReadCategoryId();
-            string supplierId = productPage.ReadSupplierId();
-            Assert.AreEqual(categoryId, "Meat/Poultry");
-            Assert.AreEqual(supplierId, "Grandma Kelly's Homestead");
-            Assert.AreEqual(productName, "chiken legs");
-            Assert.AreEqual(unitPrice, "100,0000");
-            Assert.AreEqual(quantityPerUnit, "12");
-            Assert.AreEqual(unitsInStock, "200");
-            Assert.AreEqual(unitsOnOrder, "12");
-            Assert.AreEqual(reorderLevel, "2");
-            productPage.ClickProducts();
+            Product productCheck = productService.ReadProduct(chikenLegs, driver);
+            Assert.AreEqual( chikenLegs.categoryId, productCheck.categoryId);
+            Assert.AreEqual(chikenLegs.supplierId, productCheck.supplierId);
+            Assert.AreEqual(chikenLegs.productName, productCheck.productName);
+            Assert.AreEqual(chikenLegs.unitPrice, productCheck.unitPrice);
+            Assert.AreEqual(chikenLegs.quantityPerUnit, productCheck.quantityPerUnit);
+            Assert.AreEqual(chikenLegs.unitsInStock, productCheck.unitsInStock);
+            Assert.AreEqual(chikenLegs.unitsOnOrder, productCheck.unitsOnOrder);
+            Assert.AreEqual(chikenLegs.reorderLevel, productCheck.reorderLevel);
+
         }
 
         [Test, Order(4)]
         public void Test4Delete()
         {
-            mainPage.DeleteProduct("chiken legs");
-            mainPage.WaitAllProducts(driver);
-            Assert.IsFalse(mainPage.IsProductPresent("chiken legs", driver));
+            mainPage = new MainPage(driver);
+            productService.DeleteProduct(chikenLegs, driver);
+            Assert.IsFalse(mainPage.IsProductPresent(chikenLegs.productName));
         }
 
         [Test, Order(5)]
         public void Test5Logout()
         {
+            mainPage = new MainPage(driver);
             logPage = mainPage.Logout();
             string logintext = logPage.TitleText();
             Assert.AreEqual(logintext, "Login");
